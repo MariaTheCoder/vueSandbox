@@ -1,8 +1,8 @@
 <template>
     <div class="User">
-        <div v-for="user in users" :key="user.id">
+        <p v-for="user in users" :key="user.id">
             User {{ user.id }} - {{ user.name }}
-        </div>
+        </p>
     </div>
 </template>
 
