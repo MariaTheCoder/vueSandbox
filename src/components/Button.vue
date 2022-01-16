@@ -1,13 +1,10 @@
 <template>
   <div class="hello" >
     <button>{{ buttonText }}</button>
-    <User :users="users"/>
   </div>
 </template>
 
 <script>
-import User from './User.vue';
-
 export default {
   name: 'Button',
   props: {
@@ -16,10 +13,7 @@ export default {
       type: Array, 
       required: false
     },
-  }, 
-  components: {
-    User,
-  },
+  }
 }
 </script>
 
