@@ -1,5 +1,6 @@
 <template>
-  <Button @click="fetchData" :users="this.users" msg="click to load user data"/>
+  <Button @click="fetchData" :users="this.users" buttonText="Load all users"/>
+  <Button buttonText="Delete all users"/>
 </template>
 
 <script>
