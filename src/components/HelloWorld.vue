@@ -12,7 +12,10 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String,
-    users: Array,
+    users: { 
+      type: Array, 
+      required: true
+    },
   }, 
   components: {
     User,
