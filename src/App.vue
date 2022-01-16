@@ -1,14 +1,14 @@
 <template>
-  <HelloWorld @click="fetchData" :users="this.users" msg="Welcome to Your Vue.js App"/>
+  <Button @click="fetchData" :users="this.users" msg="click to load user data"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Button from './components/Button.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Button
   },
   data() {
     return {

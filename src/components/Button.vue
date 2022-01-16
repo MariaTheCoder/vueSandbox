@@ -1,6 +1,6 @@
 <template>
   <div class="hello" >
-    <h1>{{ msg }}</h1>
+    <button>{{ msg }}</button>
     <User :users="users"/>
   </div>
 </template>
@@ -9,7 +9,7 @@
 import User from './User.vue';
 
 export default {
-  name: 'HelloWorld',
+  name: 'Button',
   props: {
     msg: String,
     users: { 
