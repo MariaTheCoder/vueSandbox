@@ -19,10 +19,7 @@ export default {
     fetchData() {
       fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
-      .then(json => {
-        this.users = json; 
-        console.log(this.users);  
-      })
+      .then(json => this.users = json)
     }
   }
 }
