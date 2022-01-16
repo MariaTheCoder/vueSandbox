@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld @click="fetchData" :users="this.users" msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
@@ -9,6 +9,21 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+      users: [],
+    }
+  },
+  methods: {
+    fetchData() {
+      fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(json => {
+        this.users = json; 
+        console.log(this.users);  
+      })
+    }
   }
 }
 </script>
