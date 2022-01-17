@@ -1,6 +1,6 @@
 <template>
   <Button @click="fetchUsers" :users="this.users" buttonText="Load all users" />
-  <Button @click="reset" buttonText="Delete all users" />
+  <Button @click="reset" buttonText="Delete all data" />
   <Display :users="this.users" />
 </template>
 
