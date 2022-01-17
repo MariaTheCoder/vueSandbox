@@ -1,15 +1,15 @@
 <template>
-  <Button @click="fetchData" :users="this.users" buttonText="Load all users"/>
-  <Button @click="reset" buttonText="Delete all users"/>
-  <Display :users="this.users"/>
+  <Button @click="fetchUsers" :users="this.users" buttonText="Load all users" />
+  <Button @click="reset" buttonText="Delete all users" />
+  <Display :users="this.users" />
 </template>
 
 <script>
-import Button from './components/Button.vue'
-import Display from './components/Display.vue'
+import Button from "./components/Button.vue";
+import Display from "./components/Display.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Button,
     Display,
@@ -17,20 +17,19 @@ export default {
   data() {
     return {
       users: [],
-    }
+    };
   },
   methods: {
-    fetchData() {
-      fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(json => this.users = json)
-    }, 
+    fetchUsers() {
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((json) => (this.users = json));
+    },
     reset() {
       this.users = [];
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
-<style>
-</style>
+<style></style>
