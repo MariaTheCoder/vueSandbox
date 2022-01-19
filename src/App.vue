@@ -1,7 +1,6 @@
 <template>
   <Button @click="fetchUsers" :users="this.users" buttonText="Load all users" />
-  <Button @click="reset" :style="{ color: red }" buttonText="Delete all data" />
-  <button :style="deleteButtonStyle">Am I red?</button>
+  <Button @click="reset" backgroundColor="red" buttonText="Delete all data" />
   <Display :users="this.users" />
 </template>
 
@@ -18,9 +17,6 @@ export default {
   data() {
     return {
       users: [],
-      deleteButtonStyle: {
-        color: "red",
-      },
     };
   },
   methods: {

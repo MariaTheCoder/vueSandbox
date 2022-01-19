@@ -1,6 +1,8 @@
 <template>
   <div class="btns">
-    <button>{{ buttonText }}</button>
+    <button>
+      {{ buttonText }}
+    </button>
   </div>
 </template>
 
@@ -8,7 +10,13 @@
 export default {
   name: "Button",
   props: {
-    buttonText: String,
+    backgroundColor: {
+      type: String,
+      default: "#0099CC70",
+    },
+    buttonText: {
+      type: String,
+    },
     users: {
       type: Array,
       required: false,
@@ -23,7 +31,7 @@ button {
   height: 30px;
   width: 150px;
   margin: 10px 5px 10px 5px;
-  background-color: hsl(200, 50%, 70%);
+  background-color: v-bind(backgroundColor);
   border: transparent;
   border-radius: 5px 5px 5px 5px;
 }
