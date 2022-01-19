@@ -1,29 +1,33 @@
 <template>
-  <Button @click="fetchUsers" :users="this.users" buttonText="Load all users" />
-  <Button @click="reset" backgroundColor="red" buttonText="Delete all data" />
+  <NavigationBar :fetchUsers="fetchUsers" :reset="reset" :users="this.users" />
   <Display :users="this.users" />
 </template>
 
 <script>
-import Button from "./components/Button.vue";
 import Display from "./components/Display.vue";
+import NavigationBar from "./components/NavigationBar.vue";
 
 export default {
   name: "App",
   components: {
-    Button,
     Display,
+    NavigationBar,
   },
   data() {
     return {
-      users: [],
+      users: {
+        default: [],
+      },
     };
   },
+  emits: ["click"],
   methods: {
     fetchUsers() {
-      fetch("https://jsonplaceholder.typicode.com/users")
-        .then((response) => response.json())
-        .then((json) => (this.users = json));
+      this.$emit("click", () => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((response) => response.json())
+          .then((json) => (this.users = json));
+      });
     },
     reset() {
       this.users = [];

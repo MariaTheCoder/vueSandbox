@@ -1,23 +1,23 @@
 <template>
-    <div class="Display">
-        <User :users="users"/>
-    </div>
+  <div class="Display">
+    <User :users="users" />
+  </div>
 </template>
 
 <script>
-import User from './User.vue';
+import User from "./User.vue";
 
 export default {
-    name: 'Display',
-    components: {
-        User,
+  name: "Display",
+  components: {
+    User,
+  },
+  props: {
+    users: {
+      type: Array,
     },
-    props: {
-        users: Array,
-    }
-}
+  },
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
