@@ -2,7 +2,7 @@
   <div class="button-container">
     <div class="navigational-buttons">
       <Button @click="fetchUsers" :users="users" buttonText="Load all users" />
-      <Button @click="fetchPosts" :posts="posts" buttonText="Load all x" />
+      <Button @click="fetchPosts" :posts="posts" buttonText="Load all posts" />
       <Button buttonText="Load all y" />
     </div>
     <Button @click="reset" backgroundColor="red" buttonText="Delete all data" />
