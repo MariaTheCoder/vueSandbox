@@ -1,14 +1,30 @@
 <template>
-  <div v-for="user in users" :key="user.id">
-    <p v-if="users.length > 0">User {{ user.id }} - {{ user.name }}</p>
+  <div v-if="users.length > 0">
+    <User
+      @loadUserPosts="refireUserPosts"
+      v-for="user in users"
+      :key="user.id"
+      :user="user"
+    />
   </div>
+  <div v-else>No loaded Users</div>
 </template>
 
 <script>
+import User from "./User.vue";
+
 export default {
   name: "Users",
+  components: {
+    User,
+  },
   props: {
     users: Array,
+  },
+  methods: {
+    refireUserPosts(data) {
+      this.$emit("loadUserPosts", data);
+    },
   },
 };
 </script>

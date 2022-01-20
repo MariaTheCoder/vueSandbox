@@ -8,7 +8,12 @@
     :posts="this.posts"
     :albums="this.albums"
   />
-  <Display :users="this.users" :posts="this.posts" :albums="this.albums" />
+  <Display
+    @loadUserPosts="setUserPosts"
+    :users="this.users"
+    :posts="this.posts"
+    :albums="this.albums"
+  />
 </template>
 
 <script>
@@ -23,15 +28,9 @@ export default {
   },
   data() {
     return {
-      users: {
-        default: [],
-      },
-      posts: {
-        default: [],
-      },
-      albums: {
-        default: [],
-      },
+      users: [],
+      posts: [],
+      albums: [],
     };
   },
   methods: {
@@ -49,6 +48,10 @@ export default {
       fetch("https://jsonplaceholder.typicode.com/albums")
         .then((response) => response.json())
         .then((json) => (this.albums = json));
+    },
+    setUserPosts(postsByUser) {
+      // console.log(postsByUser);
+      this.posts = postsByUser;
     },
     reset() {
       this.users = [];

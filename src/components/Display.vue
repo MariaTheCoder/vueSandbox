@@ -1,6 +1,6 @@
 <template>
   <div class="Display">
-    <UserList :users="users" />
+    <UserList @loadUserPosts="loadPosts" :users="users" />
     <PostList :posts="posts" />
     <AlbumList :albums="albums" />
   </div>
@@ -18,6 +18,11 @@ export default {
     PostList,
     AlbumList,
   },
+  data() {
+    return {
+      postsByUser: [],
+    };
+  },
   props: {
     posts: {
       type: Array,
@@ -27,6 +32,11 @@ export default {
     },
     albums: {
       type: Array,
+    },
+  },
+  methods: {
+    loadPosts(data) {
+      this.$emit("loadUserPosts", data);
     },
   },
 };

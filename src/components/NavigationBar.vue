@@ -37,6 +37,12 @@ export default {
     users: {
       type: Array,
     },
+    posts: {
+      type: Array,
+    },
+    albums: {
+      type: Array,
+    },
   },
 };
 </script>
