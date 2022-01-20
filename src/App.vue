@@ -1,6 +1,12 @@
 <template>
-  <NavigationBar :fetchUsers="fetchUsers" :reset="reset" :users="this.users" />
-  <Display :users="this.users" />
+  <NavigationBar
+    :fetchUsers="fetchUsers"
+    :fetchPosts="fetchPosts"
+    :reset="reset"
+    :users="this.users"
+    :posts="this.posts"
+  />
+  <Display :users="this.users" :posts="this.posts" />
 </template>
 
 <script>
@@ -18,6 +24,9 @@ export default {
       users: {
         default: [],
       },
+      posts: {
+        default: [],
+      },
     };
   },
   methods: {
@@ -26,8 +35,14 @@ export default {
         .then((response) => response.json())
         .then((json) => (this.users = json));
     },
+    fetchPosts() {
+      fetch("https://jsonplaceholder.typicode.com/posts")
+        .then((response) => response.json())
+        .then((json) => (this.posts = json));
+    },
     reset() {
       this.users = [];
+      this.posts = [];
     },
   },
 };

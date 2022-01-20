@@ -1,6 +1,12 @@
 <template>
-  <Button @click="fetchUsers" :users="users" buttonText="Load all users" />
-  <Button @click="reset" backgroundColor="red" buttonText="Delete all data" />
+  <div class="button-container">
+    <div class="navigational-buttons">
+      <Button @click="fetchUsers" :users="users" buttonText="Load all users" />
+      <Button @click="fetchPosts" :posts="posts" buttonText="Load all x" />
+      <Button buttonText="Load all y" />
+    </div>
+    <Button @click="reset" backgroundColor="red" buttonText="Delete all data" />
+  </div>
 </template>
 
 <script>
@@ -12,6 +18,9 @@ export default {
     Button,
   },
   props: {
+    fetchPosts: {
+      type: Function,
+    },
     fetchUsers: {
       type: Function,
     },
@@ -24,3 +33,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+.navigational-buttons {
+  display: flex;
+  flex-direction: row;
+}
+</style>
