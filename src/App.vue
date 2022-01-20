@@ -59,4 +59,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+body {
+  font-family: sans-serif;
+}
+</style>
