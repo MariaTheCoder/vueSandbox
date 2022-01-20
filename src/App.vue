@@ -2,11 +2,13 @@
   <NavigationBar
     :fetchUsers="fetchUsers"
     :fetchPosts="fetchPosts"
+    :fetchAlbums="fetchAlbums"
     :reset="reset"
     :users="this.users"
     :posts="this.posts"
+    :albums="this.albums"
   />
-  <Display :users="this.users" :posts="this.posts" />
+  <Display :users="this.users" :posts="this.posts" :albums="this.albums" />
 </template>
 
 <script>
@@ -27,6 +29,9 @@ export default {
       posts: {
         default: [],
       },
+      albums: {
+        default: [],
+      },
     };
   },
   methods: {
@@ -40,9 +45,15 @@ export default {
         .then((response) => response.json())
         .then((json) => (this.posts = json));
     },
+    fetchAlbums() {
+      fetch("https://jsonplaceholder.typicode.com/albums")
+        .then((response) => response.json())
+        .then((json) => (this.albums = json));
+    },
     reset() {
       this.users = [];
       this.posts = [];
+      this.albums = [];
     },
   },
 };

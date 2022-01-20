@@ -3,7 +3,11 @@
     <div class="navigational-buttons">
       <Button @click="fetchUsers" :users="users" buttonText="Load all users" />
       <Button @click="fetchPosts" :posts="posts" buttonText="Load all posts" />
-      <Button buttonText="Load all y" />
+      <Button
+        @click="fetchAlbums"
+        :albums="albums"
+        buttonText="Load all albums"
+      />
     </div>
     <Button @click="reset" backgroundColor="red" buttonText="Delete all data" />
   </div>
@@ -18,6 +22,9 @@ export default {
     Button,
   },
   props: {
+    fetchAlbums: {
+      type: Function,
+    },
     fetchPosts: {
       type: Function,
     },
