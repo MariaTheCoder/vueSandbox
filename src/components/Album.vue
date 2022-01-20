@@ -1,8 +1,6 @@
 <template>
-  <div class="Album">
-    <p v-for="album in albums" :key="album.id">
-      Album {{ album.id }} - {{ album.title }}
-    </p>
+  <div v-for="album in albums" :key="album.id">
+    <p v-if="albums.length > 0">Album {{ album.id }} - {{ album.title }}</p>
   </div>
 </template>
 

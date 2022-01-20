@@ -1,8 +1,6 @@
 <template>
-  <div class="Post">
-    <p v-for="post in posts" :key="post.id">
-      Post {{ post.id }} - {{ post.title }}
-    </p>
+  <div v-for="post in posts" :key="post.id">
+    <p v-if="posts.length > 0">Post {{ post.id }} - {{ post.title }}</p>
   </div>
 </template>
 
