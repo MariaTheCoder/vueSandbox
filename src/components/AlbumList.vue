@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Album",
+  name: "Albums",
   props: {
     albums: Array,
   },

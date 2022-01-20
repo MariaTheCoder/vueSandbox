@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Post",
+  name: "Posts",
   props: {
     posts: Array,
   },

@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "User",
+  name: "Users",
   props: {
     users: Array,
   },
