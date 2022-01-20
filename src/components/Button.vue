@@ -29,7 +29,7 @@ export default {
 <style scoped>
 button {
   height: 30px;
-  width: 150px;
+  min-width: 200px;
   margin: 10px 5px 10px 5px;
   background-color: v-bind(backgroundColor);
   border: transparent;
