@@ -1,5 +1,5 @@
 <template>
-  <Button @click="click" :users="users" buttonText="Load all users" />
+  <Button @click="fetchUsers" :users="users" buttonText="Load all users" />
   <Button @click="reset" backgroundColor="red" buttonText="Delete all data" />
 </template>
 

@@ -20,14 +20,11 @@ export default {
       },
     };
   },
-  emits: ["click"],
   methods: {
     fetchUsers() {
-      this.$emit("click", () => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-          .then((response) => response.json())
-          .then((json) => (this.users = json));
-      });
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((response) => response.json())
+        .then((json) => (this.users = json));
     },
     reset() {
       this.users = [];
