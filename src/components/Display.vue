@@ -1,22 +1,22 @@
 <template>
   <div class="Display">
-    <User :users="users" />
-    <Post :posts="posts" />
-    <Album :albums="albums" />
+    <UserList :users="users" />
+    <PostList :posts="posts" />
+    <AlbumList :albums="albums" />
   </div>
 </template>
 
 <script>
-import User from "./User.vue";
-import Post from "./Post.vue";
-import Album from "./Album.vue";
+import UserList from "./UserList.vue";
+import PostList from "./PostList.vue";
+import AlbumList from "./AlbumList.vue";
 
 export default {
   name: "Display",
   components: {
-    User,
-    Post,
-    Album,
+    UserList,
+    PostList,
+    AlbumList,
   },
   props: {
     posts: {
