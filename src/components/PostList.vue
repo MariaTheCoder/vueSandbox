@@ -1,14 +1,20 @@
 <template>
-  <div v-for="post in posts" :key="post.id">
-    <p v-if="posts.length > 0">Post {{ post.id }} - {{ post.title }}</p>
+  <div v-if="posts.length > 0">
+    <Post v-for="post in posts" :key="post.id" :post="post" />
   </div>
+  <div v-else>No loaded Posts</div>
 </template>
 
 <script>
+import Post from "./Post.vue";
+
 export default {
-  name: "Posts",
+  name: "PostList",
   props: {
     posts: Array,
+  },
+  components: {
+    Post,
   },
 };
 </script>
