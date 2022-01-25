@@ -1,14 +1,20 @@
 <template>
-  <div v-for="album in albums" :key="album.id">
-    <p v-if="albums.length > 0">Album {{ album.id }} - {{ album.title }}</p>
+  <div v-if="albums.length > 0">
+    <Album v-for="album in albums" :key="album.id" :album="album" />
   </div>
+  <div v-else>No loaded Albums</div>
 </template>
 
 <script>
+import Album from "./Album.vue";
+
 export default {
-  name: "Albums",
+  name: "AlbumList",
   props: {
     albums: Array,
+  },
+  components: {
+    Album,
   },
 };
 </script>
