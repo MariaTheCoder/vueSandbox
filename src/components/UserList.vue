@@ -2,6 +2,7 @@
   <div v-if="users.length > 0">
     <User
       @loadUserPosts="refireUserPosts"
+      @passUserIdUp="refireUserId"
       v-for="user in users"
       :key="user.id"
       :user="user"
@@ -24,6 +25,9 @@ export default {
   methods: {
     refireUserPosts(data) {
       this.$emit("loadUserPosts", data);
+    },
+    refireUserId(data) {
+      this.$emit("passUserIdUp", data);
     },
   },
 };

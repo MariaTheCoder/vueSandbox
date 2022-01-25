@@ -27,10 +27,14 @@ export default {
         .then((json) => {
           this.userPosts = json;
           this.passUserPosts();
+          this.passUserId(userId);
         });
     },
     passUserPosts() {
       this.$emit("loadUserPosts", this.userPosts);
+    },
+    passUserId(userId) {
+      this.$emit("passUserIdUp", userId);
     },
   },
 };
