@@ -56,7 +56,7 @@ export default {
   display: grid;
   grid-template-columns: auto;
   /* repeat(3, auto); */
-  grid-template-rows: repeat(2, 50px);
+  grid-template-rows: repeat(2, auto);
   grid-gap: 10px;
 }
 
