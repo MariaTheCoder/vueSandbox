@@ -1,15 +1,19 @@
 <template>
   <div class="button-container">
-    <div class="navigational-buttons">
-      <Button @click="fetchUsers" :users="users" buttonText="Load all users" />
-      <Button @click="fetchPosts" :posts="posts" buttonText="Load all posts" />
-      <Button
-        @click="fetchAlbums"
-        :albums="albums"
-        buttonText="Load all albums"
-      />
-    </div>
-    <Button @click="reset" backgroundColor="red" buttonText="Delete all data" />
+    <Button @click="fetchUsers" :users="users" buttonText="Load all users" />
+    <Button @click="fetchPosts" :posts="posts" buttonText="Load all posts" />
+    <Button
+      @click="fetchAlbums"
+      :albums="albums"
+      buttonText="Load all albums"
+    />
+    <Button
+      class="delete"
+      @click="reset"
+      backgroundColor="red"
+      textColor="white"
+      buttonText="Delete all data"
+    />
   </div>
 </template>
 
@@ -49,11 +53,15 @@ export default {
 
 <style scoped>
 .button-container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto;
+  /* repeat(3, auto); */
+  grid-template-rows: repeat(2, 50px);
+  grid-gap: 10px;
 }
-.navigational-buttons {
-  display: flex;
-  flex-direction: row;
+
+.delete {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
 </style>

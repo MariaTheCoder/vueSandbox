@@ -14,6 +14,10 @@ export default {
       type: String,
       default: "#0099CC70",
     },
+    textColor: {
+      type: String,
+      default: "black",
+    },
     buttonText: {
       type: String,
     },
@@ -28,10 +32,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 button {
-  height: 30px;
-  min-width: 200px;
-  margin: 10px 5px 10px 5px;
+  height: 100%;
+  width: 100%;
   background-color: v-bind(backgroundColor);
+  font-size: 20px;
+  font-weight: bold;
+  color: v-bind(textColor);
   border: transparent;
   border-radius: 5px 5px 5px 5px;
 }
