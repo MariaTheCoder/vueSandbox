@@ -1,8 +1,11 @@
 <template>
-  <div v-if="posts.length > 0">
-    <Post v-for="post in posts" :key="post.id" :post="post" />
-  </div>
-  <div v-else>No loaded Posts</div>
+  <fieldset>
+    <legend>Posts:</legend>
+    <div v-if="posts.length > 0">
+      <Post v-for="post in posts" :key="post.id" :post="post" />
+    </div>
+    <div v-else>No loaded Posts</div>
+  </fieldset>
 </template>
 
 <script>

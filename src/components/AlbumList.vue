@@ -1,8 +1,11 @@
 <template>
-  <div v-if="albums.length > 0">
-    <Album v-for="album in albums" :key="album.id" :album="album" />
-  </div>
-  <div v-else>No loaded Albums</div>
+  <fieldset>
+    <legend>Albums:</legend>
+    <div v-if="albums.length > 0">
+      <Album v-for="album in albums" :key="album.id" :album="album" />
+    </div>
+    <div v-else>No loaded Albums</div>
+  </fieldset>
 </template>
 
 <script>

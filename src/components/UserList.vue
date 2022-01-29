@@ -1,14 +1,17 @@
 <template>
-  <div v-if="users.length > 0">
-    <User
-      @loadUserPosts="refireUserPosts"
-      @passUserIdUp="refireUserId"
-      v-for="user in users"
-      :key="user.id"
-      :user="user"
-    />
-  </div>
-  <div v-else>No loaded Users</div>
+  <fieldset>
+    <legend>Users:</legend>
+    <div v-if="users.length > 0">
+      <User
+        @loadUserPosts="refireUserPosts"
+        @passUserIdUp="refireUserId"
+        v-for="user in users"
+        :key="user.id"
+        :user="user"
+      />
+    </div>
+    <div v-else>No loaded Users</div>
+  </fieldset>
 </template>
 
 <script>
