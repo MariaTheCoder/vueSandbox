@@ -34,6 +34,7 @@ export default {
 button {
   height: 100%;
   width: 100%;
+  padding: 10px;
   background-color: v-bind(backgroundColor);
   font-size: 20px;
   font-weight: bold;
