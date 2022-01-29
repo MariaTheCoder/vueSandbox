@@ -22,4 +22,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+fieldset {
+  margin-top: 10px;
+}
+</style>

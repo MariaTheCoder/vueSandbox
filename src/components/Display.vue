@@ -42,4 +42,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.Display {
+  margin-top: 25px;
+}
+</style>
