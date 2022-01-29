@@ -9,7 +9,7 @@
     :albums="this.albums"
   />
   <Display
-    @loadUserPosts="setUserPosts"
+    @passUserIdUp="setUserPosts"
     :users="this.users"
     :posts="this.posts"
     :albums="this.albums"
@@ -49,9 +49,15 @@ export default {
         .then((response) => response.json())
         .then((json) => (this.albums = json));
     },
-    setUserPosts(postsByUser) {
-      // console.log(postsByUser);
-      this.posts = postsByUser;
+    setUserPosts(userId) {
+      // only show the clicked user
+      this.users = this.users.filter((user) => user.id === userId);
+
+      fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
+        .then((response) => response.json())
+        .then((json) => {
+          this.posts = json;
+        });
     },
     reset() {
       this.users = [];

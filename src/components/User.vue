@@ -3,8 +3,8 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
   />
-  <div @click="postsByUser(user.id)">
-    <div v-if="user.id < 10" class="user-container">
+  <div @click="passUserId(user.id)">
+    <div class="user-container">
       <img
         class="user-image item1"
         src="https://thispersondoesnotexist.com/image"
@@ -14,44 +14,17 @@
       <i class="fa fa-close item3"></i>
       <p class="item4 user-username">@{{ user.username }}</p>
     </div>
-    <div v-else class="user-container">
-      <img
-        class="user-image item1"
-        src="https://thispersondoesnotexist.com/image"
-        alt="profile-picture"
-      />
-      <p class="item2">{{ user.name }}</p>
-      <i class="fa fa-close item3"></i>
-      <p class="item4">@{{ user.username }}</p>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: "User",
-  data() {
-    return {
-      userPosts: [],
-    };
-  },
   props: {
     user: Object,
   },
-  emits: ["loadUserPosts", "passUserIdUp"],
+  emits: ["passUserIdUp"],
   methods: {
-    postsByUser(userId) {
-      fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
-        .then((response) => response.json())
-        .then((json) => {
-          this.userPosts = json;
-          this.passUserPosts();
-          this.passUserId(userId);
-        });
-    },
-    passUserPosts() {
-      this.$emit("loadUserPosts", this.userPosts);
-    },
     passUserId(userId) {
       this.$emit("passUserIdUp", userId);
     },

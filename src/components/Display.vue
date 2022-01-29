@@ -1,6 +1,6 @@
 <template>
   <div class="Display">
-    <UserList @loadUserPosts="loadPosts" :users="users" />
+    <UserList @passUserIdUp="passUserId" :users="users" />
     <PostList :posts="posts" />
     <AlbumList :albums="albums" />
   </div>
@@ -35,8 +35,8 @@ export default {
     },
   },
   methods: {
-    loadPosts(data) {
-      this.$emit("loadUserPosts", data);
+    passUserId(userId) {
+      this.$emit("passUserIdUp", userId);
     },
   },
 };
