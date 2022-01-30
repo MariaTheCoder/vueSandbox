@@ -5,11 +5,7 @@
   />
   <div @click="passUserId(user.id)">
     <div class="user-container">
-      <img
-        class="user-image item1"
-        src="https://thispersondoesnotexist.com/image"
-        alt="profile-picture"
-      />
+      <img class="user-image item1" :src="picture" alt="profile-picture" />
       <p class="item2 user-name">{{ user.name }}</p>
       <i class="fa fa-close item3"></i>
       <p class="item4 user-username">@{{ user.username }}</p>
@@ -22,6 +18,7 @@ export default {
   name: "User",
   props: {
     user: Object,
+    picture: String,
   },
   emits: ["passUserIdUp"],
   methods: {

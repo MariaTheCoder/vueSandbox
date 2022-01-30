@@ -3,11 +3,11 @@
     <legend>Users:</legend>
     <div v-if="users.length > 0">
       <User
-        @loadUserPosts="refireUserPosts"
         @passUserIdUp="refireUserId"
         v-for="user in users"
         :key="user.id"
         :user="user"
+        :picture="picture"
       />
     </div>
     <div v-else>No loaded Users</div>
@@ -19,16 +19,19 @@ import User from "./User.vue";
 
 export default {
   name: "Users",
+  data() {
+    return {
+      picture: "https://thispersondoesnotexist.com/image",
+    };
+  },
   components: {
     User,
   },
   props: {
     users: Array,
   },
+  emits: ["passUserIdUp"],
   methods: {
-    refireUserPosts(data) {
-      this.$emit("loadUserPosts", data);
-    },
     refireUserId(data) {
       this.$emit("passUserIdUp", data);
     },

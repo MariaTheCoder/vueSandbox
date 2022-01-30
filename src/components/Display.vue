@@ -34,6 +34,7 @@ export default {
       type: Array,
     },
   },
+  emits: ["passUserIdUp"],
   methods: {
     passUserId(userId) {
       this.$emit("passUserIdUp", userId);
